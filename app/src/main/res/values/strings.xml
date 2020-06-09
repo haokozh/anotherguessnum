@@ -1,0 +1,13 @@
+<resources>
+  <string name="app_name">RoomGuessNum</string>
+  <string name="user_rank">User Rank</string>
+  <string name="button_back">back</string>
+  <string name="button_query">Query</string>
+  <string name="button_delete">Delete</string>
+  <string name="no_user">No user</string>
+  <string name="app_title">Guess Number</string>
+  <string name="button_enter">Enter</string>
+  <string name="button_exit">Exit</string>
+  <string name="enter_your_username">Enter your username</string>
+  <string name="playing_user_name">Username :</string>
+</resources>
