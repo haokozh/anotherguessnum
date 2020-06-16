@@ -63,8 +63,16 @@ public class RankActivity extends AppCompatActivity {
 
     buttonQuery.setOnClickListener(v -> {
       if (TextUtils.isEmpty(idInput.getText())) return;
-      int queryId = Integer.parseInt(idInput.getText().toString());
-      userViewModel.getUserById(queryId).observe(this, adapter::setUsers);
+      if (TextUtils.equals(idInput.getText(), "all")) {
+        userViewModel.getAllUsersOrderByPlayTime().observe(this, adapter::setUsers);
+      }
+      if (TextUtils.isDigitsOnly(idInput.getText())) {
+        int queryId = Integer.parseInt(idInput.getText().toString());
+        userViewModel.getUserById(queryId).observe(this, adapter::setUsers);
+      } else {
+        String userName = idInput.getText().toString();
+        userViewModel.getUserByName(userName).observe(this, adapter::setUsers);
+      }
       idInput.setText("");
     });
 

@@ -8,7 +8,6 @@ public class UserRepository {
 
   private UserDao userDao;
   private LiveData<List<User>> allUsersOrderByPlayTime;
-  private LiveData<List<User>> allUserById;
 
   UserRepository(Application application) {
     UserRoomDatabase db = UserRoomDatabase.getInstance(application);
@@ -22,6 +21,10 @@ public class UserRepository {
 
   LiveData<List<User>> getUserById(int id) {
     return userDao.getUserById(id);
+  }
+
+  LiveData<List<User>> getUserByName(String userName) {
+    return userDao.getUserByName(userName);
   }
 
   void insert(User user) {

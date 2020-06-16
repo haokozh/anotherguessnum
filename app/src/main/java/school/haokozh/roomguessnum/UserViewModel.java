@@ -24,6 +24,10 @@ public class UserViewModel extends AndroidViewModel {
     return repository.getUserById(id);
   }
 
+  LiveData<List<User>> getUserByName(String userName) {
+    return repository.getUserByName(userName);
+  }
+
   public void insert(User user) {
     repository.insert(user);
   }

@@ -134,7 +134,7 @@ public class GameActivity extends AppCompatActivity {
             .append("Count : ")
             .append(guessCount);
 
-        userName = getIntent().getStringExtra("user_name");
+        userName = this.getIntent().getStringExtra("user_name");
         assert userName != null;
         userViewModel.insert(new User(userName, playTime, guessCount));
 
