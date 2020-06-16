@@ -20,7 +20,15 @@ public class UserViewModel extends AndroidViewModel {
     return allUsersOrderByPlayTime;
   }
 
+  LiveData<List<User>> getUserById(int id) {
+    return repository.getUserById(id);
+  }
+
   public void insert(User user) {
     repository.insert(user);
+  }
+
+  void deleteById(int id) {
+    repository.deleteById(id);
   }
 }

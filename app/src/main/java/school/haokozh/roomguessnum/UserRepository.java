@@ -8,6 +8,7 @@ public class UserRepository {
 
   private UserDao userDao;
   private LiveData<List<User>> allUsersOrderByPlayTime;
+  private LiveData<List<User>> allUserById;
 
   UserRepository(Application application) {
     UserRoomDatabase db = UserRoomDatabase.getInstance(application);
@@ -19,9 +20,19 @@ public class UserRepository {
     return allUsersOrderByPlayTime;
   }
 
+  LiveData<List<User>> getUserById(int id) {
+    return userDao.getUserById(id);
+  }
+
   void insert(User user) {
     UserRoomDatabase.databaseWriteExecutor.execute(() -> {
       userDao.insert(user);
+    });
+  }
+
+  void deleteById(int id) {
+    UserRoomDatabase.databaseWriteExecutor.execute(() -> {
+      userDao.deleteById(id);
     });
   }
 

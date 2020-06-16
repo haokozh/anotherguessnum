@@ -35,12 +35,18 @@
     android:layout_marginTop="70dp"
     android:layout_marginStart="300dp" />
 
+  <EditText
+    android:id="@+id/id_input"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="150dp" />
+
   <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/recyclerview"
     android:layout_width="match_parent"
-    android:layout_height="500dp"
+    android:layout_height="450dp"
     tools:listitem="@layout/recyclerview_item"
-    android:layout_marginTop="150dp"
+    android:layout_marginTop="200dp"
     android:padding="@dimen/big_padding" />
 
 </RelativeLayout>

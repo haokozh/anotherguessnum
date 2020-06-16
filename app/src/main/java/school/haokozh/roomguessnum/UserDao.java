@@ -13,9 +13,15 @@ public interface UserDao {
   @Insert(onConflict = OnConflictStrategy.IGNORE)
   void insert(User user);
 
+  @Query("DELETE FROM user_table WHERE user_id = :id")
+  void deleteById(int id);
+
   @Query("DELETE FROM user_table")
   void deleteAll();
 
   @Query("SELECT * FROM user_table ORDER BY play_time ASC")
   LiveData<List<User>> getUsersOrderByPlayTime();
+
+  @Query("SELECT * FROM user_table WHERE user_id = :id")
+  LiveData<List<User>> getUserById(int id);
 }
